@@ -157,6 +157,8 @@ select {
     radial-gradient(circle at 82% 18%, rgba(194, 163, 255, 0.18), transparent 34%),
     linear-gradient(145deg, rgba(255, 255, 255, 0.1), transparent 42%),
     var(--panel-strong);
+  gap: 22px;
+  justify-content: flex-start;
 }
 
 .panel-marker {
@@ -174,6 +176,208 @@ select {
   color: #ffffff;
   font-size: clamp(1.7rem, 3vw, 3rem);
   line-height: 1;
+  margin: 0;
+}
+
+.info-header {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.info-header h2 {
+  margin-top: 18px;
+}
+
+.threat-badge {
+  background:
+    linear-gradient(135deg, rgba(255, 209, 102, 0.22), rgba(255, 74, 112, 0.18));
+  border: 1px solid rgba(255, 209, 102, 0.52);
+  border-radius: 999px;
+  box-shadow: 0 0 22px rgba(255, 121, 63, 0.16);
+  color: #ffe7a6;
+  flex: 0 0 auto;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 10px 13px;
+  text-transform: uppercase;
+}
+
+.monster-profile {
+  border-bottom: 1px solid rgba(145, 164, 199, 0.16);
+  display: grid;
+  gap: 14px;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  padding-bottom: 18px;
+  width: 100%;
+}
+
+.record-label,
+.stat-badge span {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 5px;
+  text-transform: uppercase;
+}
+
+.record-value {
+  color: #ffffff;
+  font-size: 1.04rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.stat-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+}
+
+.stat-badge {
+  background: rgba(5, 8, 22, 0.28);
+  border: 1px solid rgba(145, 164, 199, 0.16);
+  border-radius: 16px;
+  min-width: 0;
+  padding: 12px;
+}
+
+.stat-badge strong {
+  color: #f6f9ff;
+  display: block;
+  font-size: 0.98rem;
+  line-height: 1.25;
+}
+
+.stat-badge--danger {
+  background: rgba(255, 99, 99, 0.12);
+  border-color: rgba(255, 209, 102, 0.36);
+}
+
+.stat-badge--danger strong {
+  color: #ffe7a6;
+  font-size: 1.3rem;
+}
+
+.info-section {
+  width: 100%;
+}
+
+.info-section h3 {
+  color: #dffcff;
+  font-size: 0.86rem;
+  letter-spacing: 0.1em;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
+.hobby-list {
+  color: var(--text);
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 19px;
+}
+
+.hobby-list li::marker {
+  color: var(--accent);
+}
+
+.trait-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.trait-pill {
+  background: rgba(120, 232, 255, 0.1);
+  border: 1px solid rgba(120, 232, 255, 0.24);
+  border-radius: 999px;
+  color: #dffcff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 7px 11px;
+}
+
+.scan-report {
+  background:
+    linear-gradient(180deg, rgba(120, 232, 255, 0.08), transparent),
+    rgba(1, 6, 15, 0.58);
+  border: 1px solid rgba(120, 232, 255, 0.2);
+  border-radius: 16px;
+  color: #bdefff;
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  padding: 14px;
+}
+
+.scan-report span {
+  color: var(--accent);
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.scan-report p {
+  margin: 0;
+}
+
+.ability-chart {
+  background: rgba(5, 8, 22, 0.24);
+  border: 1px solid rgba(145, 164, 199, 0.14);
+  border-radius: 18px;
+  height: 246px;
+  min-width: 0;
+  padding: 14px 8px 8px;
+  width: 100%;
+}
+
+.timeline {
+  display: grid;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-item {
+  border-left: 1px solid rgba(120, 232, 255, 0.28);
+  padding: 0 0 16px 18px;
+  position: relative;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  background: var(--accent);
+  border: 3px solid rgba(5, 8, 22, 0.92);
+  border-radius: 999px;
+  box-shadow: 0 0 14px rgba(120, 232, 255, 0.42);
+  content: "";
+  height: 10px;
+  left: -8px;
+  position: absolute;
+  top: 2px;
+  width: 10px;
+}
+
+.timeline-year {
+  color: var(--accent);
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 900;
+  margin-bottom: 3px;
+}
+
+.timeline-item p {
+  color: var(--text);
   margin: 0;
 }
 
@@ -264,5 +468,18 @@ select {
 
   .viewer-canvas {
     min-height: 360px;
+  }
+
+  .info-header,
+  .monster-profile {
+    grid-template-columns: 1fr;
+  }
+
+  .info-header {
+    flex-direction: column;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
   }
 }
