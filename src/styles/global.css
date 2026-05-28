@@ -1,0 +1,200 @@
+:root {
+  --bg-deep: #050816;
+  --bg-mid: #0d1830;
+  --text: #d7e3ff;
+  --text-muted: #91a4c7;
+  --panel: rgba(12, 23, 46, 0.62);
+  --panel-strong: rgba(17, 34, 67, 0.78);
+  --border: rgba(141, 180, 255, 0.22);
+  --border-hot: rgba(104, 221, 255, 0.46);
+  --glow: rgba(68, 160, 255, 0.28);
+  --accent: #78e8ff;
+  --accent-secondary: #c2a3ff;
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+
+  color: var(--text);
+  background: var(--bg-deep);
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(78, 147, 255, 0.22), transparent 34%),
+    radial-gradient(circle at 86% 12%, rgba(184, 98, 255, 0.18), transparent 30%),
+    linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-mid) 52%, #03050d 100%);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.archive-shell {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 28px;
+  padding: 36px;
+  overflow: hidden;
+  position: relative;
+}
+
+.archive-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(120, 232, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 232, 255, 0.05) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.72), transparent 92%);
+}
+
+.archive-header,
+.archive-grid,
+.archive-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.archive-header {
+  max-width: 960px;
+}
+
+.archive-kicker {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.archive-header h1 {
+  color: #f6f9ff;
+  font-size: clamp(2.35rem, 6vw, 5.4rem);
+  line-height: 0.95;
+  margin: 0;
+  text-shadow: 0 0 28px rgba(120, 232, 255, 0.22);
+}
+
+.archive-subtitle {
+  color: var(--text-muted);
+  font-size: clamp(1rem, 2vw, 1.22rem);
+  margin: 16px 0 0;
+}
+
+.archive-grid {
+  display: grid;
+  flex: 1;
+  grid-template-columns: minmax(0, 58fr) minmax(320px, 42fr);
+  gap: 24px;
+  min-height: 520px;
+}
+
+.glass-card {
+  align-items: flex-start;
+  backdrop-filter: blur(18px);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.1), transparent 42%),
+    var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 420px;
+  padding: 28px;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.glass-card:hover {
+  border-color: var(--border-hot);
+  box-shadow:
+    0 28px 82px rgba(0, 0, 0, 0.48),
+    0 0 40px var(--glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+.monster-viewer {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(120, 232, 255, 0.16), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.1), transparent 42%),
+    var(--panel);
+}
+
+.monster-info {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(194, 163, 255, 0.18), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.1), transparent 42%),
+    var(--panel-strong);
+}
+
+.panel-marker {
+  border: 1px solid rgba(120, 232, 255, 0.32);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 7px 12px;
+  text-transform: uppercase;
+}
+
+.glass-card h2 {
+  color: #ffffff;
+  font-size: clamp(1.7rem, 3vw, 3rem);
+  line-height: 1;
+  margin: 0;
+}
+
+.archive-footer {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 820px) {
+  .archive-shell {
+    gap: 22px;
+    padding: 24px;
+  }
+
+  .archive-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .glass-card {
+    border-radius: 20px;
+    min-height: 300px;
+    padding: 22px;
+  }
+}
