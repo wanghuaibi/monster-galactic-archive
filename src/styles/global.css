@@ -148,6 +148,8 @@ select {
     radial-gradient(circle at 50% 42%, rgba(120, 232, 255, 0.16), transparent 34%),
     linear-gradient(145deg, rgba(255, 255, 255, 0.1), transparent 42%),
     var(--panel);
+  gap: 20px;
+  overflow: hidden;
 }
 
 .monster-info {
@@ -175,6 +177,64 @@ select {
   margin: 0;
 }
 
+.viewer-toolbar {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.viewer-toolbar h2 {
+  margin-top: 18px;
+}
+
+.reset-view-button {
+  background: rgba(120, 232, 255, 0.1);
+  border: 1px solid rgba(120, 232, 255, 0.34);
+  border-radius: 999px;
+  color: #e9fbff;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 10px 14px;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.reset-view-button:hover {
+  background: rgba(120, 232, 255, 0.18);
+  border-color: rgba(120, 232, 255, 0.7);
+  transform: translateY(-1px);
+}
+
+.reset-view-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.viewer-canvas {
+  border: 1px solid rgba(120, 232, 255, 0.14);
+  border-radius: 18px;
+  flex: 1;
+  min-height: 330px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.viewer-canvas canvas {
+  cursor: grab;
+  display: block;
+}
+
+.viewer-canvas canvas:active {
+  cursor: grabbing;
+}
+
 .archive-footer {
   color: var(--text-muted);
   font-size: 0.9rem;
@@ -196,5 +256,13 @@ select {
     border-radius: 20px;
     min-height: 300px;
     padding: 22px;
+  }
+
+  .viewer-toolbar {
+    flex-direction: column;
+  }
+
+  .viewer-canvas {
+    min-height: 360px;
   }
 }
